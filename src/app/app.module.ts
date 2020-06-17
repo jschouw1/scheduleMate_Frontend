@@ -2,27 +2,39 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Component Imports
+import { AppComponent } from './app.component';
 import { TablesComponent } from './tables/tables.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
-import { MatNativeDateModule } from '@angular/material/core'
+// Service Imports
+
 
 // Material Imports
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatNativeDateModule} from '@angular/material/core'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TablesComponent,
     EmployeesComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +46,12 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSelectModule,
     MatDatepickerModule,
     MatSliderModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

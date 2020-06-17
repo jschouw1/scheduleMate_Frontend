@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="siteTitle">
+        ScheduleMate
+    </span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenavContainer">
+    <mat-sidenav #sidenav mode=push>
+        Sidenav content
+    </mat-sidenav>
+    <mat-sidenav-content>
+        Page content
+    </mat-sidenav-content>
+</mat-sidenav-container>
