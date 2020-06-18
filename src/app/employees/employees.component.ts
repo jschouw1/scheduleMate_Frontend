@@ -1,7 +1,17 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EmployeeFormService } from './employee-form.service';
 
 export interface DialogData {
+
+  employeeId: number;
+  firstName: string;
+  insertion: string;
+  lastName: string;
+  employedAs: string;
+  startContract: string;
+  endContract: string;
+  hoursPerWeek: number;
 
 }
 
@@ -12,41 +22,25 @@ export interface DialogData {
 })
 export class EmployeesComponent implements OnInit {
 
-  result: string;
+  employeeId: number;
+  firstName: string;
+  insertion: string;
+  lastName: string;
+  employedAs: string;
+  startContract: string;
+  endContract: string;
+  hoursPerWeek: number;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private formService: EmployeeFormService) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(EmployeeFormComponent, {
-      width: '600px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.result = result;
-      console.log('The result property is now: ' + this.result);
+  openDialog() {
+    this.formService.openDialog().subscribe(data => {
+      console.log(data);
     });
   }
+
 
   ngOnInit(): void {
+
   }
-
-}
-
-@Component({
-  selector: 'app-employee-form',
-  templateUrl: './employee-form.component.html',
-  styleUrls: ['./employee-form.component.css']
-})
-export class EmployeeFormComponent implements OnInit {
-
-  constructor(public dialogRef: MatDialogRef<EmployeeFormComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  ngOnInit(): void {
-  }
-
 }

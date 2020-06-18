@@ -2,46 +2,51 @@
 <div mat-dialog-content>
     <div class="employeeForm">
         <mat-form-field>
+            <mat-label>Werkemers nummer</mat-label>
+            <input matInput type="number" [(ngModel)]="data.employeeId">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
             <mat-label>Voornaam</mat-label>
-            <input matInput>
+            <input matInput type="text" [(ngModel)]="data.firstName">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>tussenvoegsel(s)</mat-label>
-            <input matInput>
+            <input matInput type="text" [(ngModel)]="data.insertion">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Achternaam</mat-label>
-            <input matInput>
+            <input matInput type="text" [(ngModel)]="data.lastName">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Functie</mat-label>
-            <input matInput>
+            <input matInput type="text" [(ngModel)]="data.employedAs">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Startdatum Contract</mat-label>
-            <input matInput [matDatepicker]="startDatepicker">
+            <input matInput [matDatepicker]="startDatepicker" type="text" [(ngModel)]="data.startContract">
             <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #startDatepicker></mat-datepicker>
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Einddatum Contract</mat-label>
-            <input matInput [matDatepicker]="endDatepicker">
+            <input matInput [matDatepicker]="endDatepicker" type="text" [(ngModel)]="data.endContract">
             <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #endDatepicker></mat-datepicker>
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Contract uren</mat-label>
-            <input matInput placeholder="uren/week">
+            <input matInput type="number" placeholder="uren/week" [(ngModel)]="data.hoursPerWeek">
         </mat-form-field>
     </div>
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary">Toevoegen</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Toevoegen</button>
     <button mat-raised-button (click)="onNoClick()">Annuleren</button>
 </div>
