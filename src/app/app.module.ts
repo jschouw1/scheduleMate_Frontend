@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TablesComponent } from './tables/tables.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { EmployeeFormComponent } from './employees/employees.component';
 import { MainPageComponent } from './main-page/main-page.component'; 
 import { HomepageComponent } from './homepage/homepage.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';

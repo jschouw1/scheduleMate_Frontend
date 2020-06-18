@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Nieuwe werknemer</h1>
+<div mat-dialog-content>
+    <div class="employeeForm">
+        <mat-form-field>
+            <mat-label>Voornaam</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>tussenvoegsel(s)</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Achternaam</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Functie</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Startdatum Contract</mat-label>
+            <input matInput [matDatepicker]="startDatepicker">
+            <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatepicker></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Einddatum Contract</mat-label>
+            <input matInput [matDatepicker]="endDatepicker">
+            <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatepicker></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Contract uren</mat-label>
+            <input matInput placeholder="uren/week">
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary">Toevoegen</button>
+    <button mat-raised-button (click)="onNoClick()">Annuleren</button>
+</div>
