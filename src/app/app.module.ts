@@ -9,7 +9,9 @@ import { AppComponent } from './app.component';
 import { TablesComponent } from './tables/tables.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageComponent } from './main-page/main-page.component'; 
+import { HomepageComponent } from './homepage/homepage.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // Service Imports
 
@@ -26,6 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import {MatIconModule} from '@angular/material/icon';
     TablesComponent,
     EmployeesComponent,
     EmployeeFormComponent,
-    MainPageComponent
+    MainPageComponent,
+    HomepageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

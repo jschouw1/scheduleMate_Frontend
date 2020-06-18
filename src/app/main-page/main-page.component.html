@@ -8,10 +8,17 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenavContainer">
+    
     <mat-sidenav #sidenav mode=push>
-        Sidenav content
+        <mat-nav-list>
+            <a mat-list-item href="/home">Home</a>
+            <a mat-list-item href="/employees">Medewerkers</a>
+            <a mat-list-item href="/thisdoesnotexist">Page not found test</a>
+        </mat-nav-list>
     </mat-sidenav>
+    
     <mat-sidenav-content>
-        Page content
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
+
 </mat-sidenav-container>
