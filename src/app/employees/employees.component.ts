@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeFormService } from './employee-form.service';
+import { EmployeeRegistrationService } from './employee-registration.service';
 
 export interface DialogData {
 
@@ -31,11 +32,13 @@ export class EmployeesComponent implements OnInit {
   endContract: string;
   hoursPerWeek: number;
 
-  constructor(private formService: EmployeeFormService) {}
+  constructor(public formService: EmployeeFormService, public registrationService: EmployeeRegistrationService) {}
 
   openDialog() {
     this.formService.openDialog().subscribe(data => {
       console.log(data);
+        
+      this.registrationService.addEmployee(data);
     });
   }
 
